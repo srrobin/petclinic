@@ -1,0 +1,37 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+  {% block title %}Details{% endblock %}
+
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4 mt-3 ">
+        <div class="card text-white bg-secondary mb-3" style="width:348px">
+          <div class="card-header">Info</div>
+          <div class="card-body">
+            <h5 class="card-title">Petclinic </h5>
+            <p class="card-text">
+              Sed ut auctor lorem, vel auctor augue. Nunc in sodales ligula. Sed ut sollicitudin est,
+                vel porta ligula. Aenean consequat molestie felis, et finibus ipsum volutpat eu. Nam
+                tempus eros nisi, eget vehicula tellus aliquam ut. Donec eleifend mollis lectus, eu
+                interdum sapien mollis nec. Cras consectetur turpis sed consectetur rutrum. Suspendisse
+                potenti.Etiam aliquet placerat turpis tristique volutpat.
+            </p>
+          </div>
+        </div>
+    </div>
+
+  <div class="col-md-8 mt-3  ">
+
+      <h6><strong>Owner</strong></h6>
+      <form method="post" >{% csrf_token %}
+       {{forms}}
+       <button type="submit" class="btn btn-block  btn-secondary mt-3">Submit</button>
+      </form>
+
+  </div>
+
+</div>
+{% endblock %}

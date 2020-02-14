@@ -1,0 +1,47 @@
+{% load static %}
+
+
+<nav class="navbar navbar-expand-sm  bg-dark navbar-dark">
+  <a class="navbar-brand" href="{% url 'home'%}"><img src="{% static 'img/dj1.png'%}" height="50" width="50" alt="">petclinic</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="{% url 'home'%}">Home </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="">Find owners </a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="">owners List</a>
+          </li>
+          <li class="nav-item active">
+            <a class="nav-link" href="">Veterinarians </a>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+         {% if user.is_authenticated %}
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'change_password' %}" >change password</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'register_update' %}" >update</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'logout' %}" > Logout</a>
+              </li>
+         {% else %}
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'login' %}" >Login</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="{% url 'register' %}" >Register</a>
+              </li>
+         {% endif %}
+        </ul>
+  </div>
+</nav>

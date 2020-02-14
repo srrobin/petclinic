@@ -1,0 +1,102 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+  {% block title %}Details{% endblock %}
+
+
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4 mt-3 ">
+
+        <a href="{% url 'owner_edit' owner.id %}" class="btn btn-block  btn-secondary" type="submit" role="button">edit owner</a>
+        <a href="{% url 'add_pet' owner.id %}" class="btn btn-block  btn-secondary" type="submit" role="button">add new pet</a>
+        <a href="{% url 'get_pdf_std' owner.id %}" target="_blank" class="btn btn-block  btn-secondary" type="submit" role="button">report card (pdf)</a>
+
+        <div class="card text-white bg-secondary mt-2 mb-3" style="width:348px">
+          <div class="card-header">Info</div>
+          <div class="card-body">
+            <h5 class="card-title">Petclinic </h5>
+            <p class="card-text">
+              Sed ut auctor lorem, vel auctor augue. Nunc in sodales ligula. Sed ut sollicitudin est,
+                vel porta ligula. Aenean consequat molestie felis, et finibus ipsum volutpat eu. Nam
+                tempus eros nisi, eget vehicula tellus aliquam ut.
+            </p>
+          </div>
+        </div>
+
+    </div>
+
+  <div class="col-md-8 mt-3  ">
+
+      <h6><strong>Owner Information</strong></h6>
+      <table class="table table-hover ">
+          <tr>
+            <td>Name</td>
+            <td>{{ owner.first_name }}&nbsp;{{ owner.last_name }}</td>
+          </tr>
+
+          <tr>
+            <td>Address</td>
+            <td>{{ owner.address }}</td>
+          </tr>
+          <tr>
+
+            <td>City</td>
+            <td>{{owner.city}}</td>
+          </tr>
+
+          <tr>
+            <td>Telephone</td>
+            <td>{{owner.telephone}}</td>
+          </tr>
+
+      </table>
+
+      <hr class="style2">
+
+      <h6><strong>Pets and Visits</strong></h6>
+      {% for pet in owner.pet_set.all %}
+      <table class="table table-striped">
+      <tr>
+        <td valign="top">
+          <dl class="dl-horizontal">
+            <dt>Name</dt>
+            <dd >{{pet.name}}</dd>
+            <dt>Birth Date</dt>
+            <dd >{{ pet.birth_date }}</dd>
+            <dt>Type</dt>
+            <dd >{{pet.pet_type.name }}</dd>
+          </dl>
+        </td>
+        <td valign="top">
+          <table class="table-condensed">
+            <thead>
+              <tr>
+                <th>Visit Date</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+              {% for visit in pet.visit_set.all %}
+            <tr>
+              <td>{{ visit.visit_date }}</td>
+              <td>{{ visit.description }}</td>
+            </tr>
+              {% endfor %}
+            <tr>
+              <td><a class="btn btn-info py-0 disabled" style="font-size: 0.8em;" tabindex="-1" href="" role="button">Edit Pet</a></td>
+              <td><a class="btn btn-info py-0" style="font-size: 0.8em;" href="{% url 'add_visit' owner.id %}" role="button">Add Visit</a></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+
+    </table>
+      {% empty %}
+    <p>There are no pets for this owner.</p>
+{% endfor %}
+
+  </div>
+
+</div>
+{% endblock %}

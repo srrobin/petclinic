@@ -1,0 +1,63 @@
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/4.7.0/css/all.css">
+
+    <title>
+    {% block title %}
+
+    {% endblock %}
+    </title>
+      <style>
+       .table td, .table th {
+          border-top: 1px solid #CDB79E;
+          padding:5px 5px;
+        }
+         .dl-horizontal dt {
+          float: left;
+          width: 160px;
+          clear: left;
+          text-align: right;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .dl-horizontal dd {
+          margin-left: 180px;
+        }
+        table.table-condensed td, table.table-condensed th {
+        border: none;
+        background: none;
+      }
+      hr.style2 {
+        border-top: 3px double #8c8b8b;
+        margin-bottom: 40px;
+        margin-top: 40px;
+      }
+
+
+      </style>
+  </head>
+  <body>
+  {% include 'base/nav.html' %}
+     <div class="container">
+       <div class="row">
+         <div class="col-md-4 offset-4">
+            {% include 'auth/message.html' %}
+         </div>
+       </div>
+      {% block content %}
+
+
+     {% endblock %}
+     </div>
+
+    <script src="https://use.fontawesome.com/6416b786ad.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+  </body>
+</html>
