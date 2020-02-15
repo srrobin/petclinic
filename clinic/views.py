@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import OwnerForm,PetForm,VisitForm
-from .models import Owner
+from .models import Owner,Pet
 
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
@@ -12,6 +12,7 @@ from django.template.loader import get_template
 from django.utils.html import escape
 from xhtml2pdf import pisa
 from io import StringIO, BytesIO
+from django.contrib.auth.decorators import login_required
 
 
 
@@ -73,9 +74,9 @@ def add_owner(request):
 
 
 def owner_edit(request,owner_id):
-    owner_detail = Owner.objects.get(pk=owner_id)
+    owner = Owner.objects.get(pk=owner_id)
 
-    forms = OwnerForm(request.POST or None,instance=owner_detail )
+    forms = OwnerForm(request.POST or None,instance=owner)
     if request.method == 'POST':
         if forms.is_valid():
             owner = forms.save(commit=False)
@@ -114,5 +115,8 @@ def add_visit(request,owner_id):
 
 
 
-"""def find_owners(request):
-    return render("petclinic/owners/find_owners.html", {})"""
+
+
+
+
+

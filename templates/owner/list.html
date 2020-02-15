@@ -1,43 +1,34 @@
-{% extends 'base/base.html' %}
-{% load static %}
-
-  {% block title %}Doc List{% endblock %}
-
-
-
-{% block content %}
+{% extends 'base/base.html' %} {% load static %} {% block title %}Doc List{% endblock %} {% block content %}
 <div class="row">
-  <div class="col-md-12 mt-5">
-      <h5>owners</h5>
-      <table class="table table-hover ">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">sl no.</th>
-              <th scope="col">Name</th>
-              <th scope="col">Address</th>
-              <th scope="col">City</th>
-              <th scope="col">Telephone</th>
-              <th scope="col">Pets</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for owner in all_owners_list %}
-            <tr>
-              <th scope="row">{{forloop.counter}}</th>
-              <td><a href="/pet/owners/{{ owner.id }}">{{ owner.first_name }} {{ owner.last_name }}</a></td>
-              <td>{{owner.address}}</td>
-              <td>{{owner.city}}</td>
-              <td>{{owner.telephone}}</td>
-              <td>
-                   {% for pet in owner.pet_set.all %}
-                   {{ pet.name }}
-                   {% endfor %}
-              </td>
+    <div class="col-md-12 mt-5">
+        <h5>owners</h5>
+        <table class="table table-hover ">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">sl no.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">City</th>
+                    <th scope="col">Telephone</th>
+                    <th scope="col">Pets</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for owner in all_owners_list %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td><a href="/pet/owners/{{ owner.id }}">{{ owner.first_name }} {{ owner.last_name }}</a></td>
+                    <td>{{owner.address}}</td>
+                    <td>{{owner.city}}</td>
+                    <td>{{owner.telephone}}</td>
+                    <td>
+                        {% for pet in owner.pet_set.all %} {{ pet.name }} {% endfor %}
+                    </td>
 
-            </tr>
-          {% endfor %}
-          </tbody>
+                </tr>
+                {% endfor %}
+            </tbody>
         </table>
-  </div>
+    </div>
 </div>
 {% endblock %}

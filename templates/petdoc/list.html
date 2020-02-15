@@ -1,33 +1,26 @@
-{% extends 'base/base.html' %}
-{% load static %}
-
-  {% block title %}Doc List{% endblock %}
-
-
-
-{% block content %}
+{% extends 'base/base.html' %} {% load static %} {% block title %}Doc List{% endblock %} {% block content %}
 <div class="row">
-  <div class="col-md-12 mt-3">
+    <div class="col-md-12 mt-3">
 
-      <h4>Veterinarians</h4>
-      <table class="table table-hover ">
-          <thead class="thead-dark">
-            <tr>
-              <th scope="col">sl no.</th>
-              <th scope="col">Name</th>
-              <th scope="col">Specialties</th>
-            </tr>
-          </thead>
-          <tbody>
-          {% for list in lists %}
-            <tr>
-              <th scope="row">{{forloop.counter}}</th>
-              <td>{{list.name}}</td>
-              <td>{{list.specialtie.title}}</td>
-            </tr>
-          {% endfor %}
-          </tbody>
+        <h4>Veterinarians</h4>
+        <table class="table table-hover ">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">sl no.</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Specialties</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for list in lists %}
+                <tr>
+                    <th scope="row">{{forloop.counter}}</th>
+                    <td>{{list.name}}</td>
+                    <td>{{list.specialtie.title}}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
         </table>
-  </div>
+    </div>
 </div>
 {% endblock %}

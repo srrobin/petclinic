@@ -1,0 +1,36 @@
+
+       .table td, .table th {
+          border-top: 1px solid #CDB79E;
+          padding:5px 5px;
+        }
+         .dl-horizontal dt {
+          float: left;
+          width: 160px;
+          clear: left;
+          text-align: right;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .dl-horizontal dd {
+          margin-left: 180px;
+        }
+        table.table-condensed td, table.table-condensed th {
+        border: none;
+        background: none;
+      }
+      hr.style2 {
+        border-top: 3px double #8c8b8b;
+        margin-bottom: 40px;
+        margin-top: 40px;
+      }
+        .home-title {
+          font-family: "Sriracha",cursive;
+          font-size: 30px;
+          font-weight: 700;
+          margin-left: 50px;
+          color:#388E8E;
+        }
+        .home-title img {
+          width: 40px;
+        }

@@ -1,163 +1,160 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<style>
-table, th, td {
-  border: 1px solid #CDB79E;
-  padding:4px;
-  font-size:13px;
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid #CDB79E;
+            padding: 4px;
+            font-size: 13px;
+        }
 
-}
-hr.style2{
-border-top: 3px double #8c8b8b;
-margin-bottom: 40px;
-}
+        hr.style2 {
+            border-top: 3px double #8c8b8b;
+            margin-bottom: 40px;
+        }
 
-dd,dt{
-    display: inline;
-}
-</style>
+        dd,
+        dt {
+            display: inline;
+        }
+    </style>
 </head>
+
 <body>
-<h1 style="text-align:center;">LIGHT FOUNDATION PETCLINIC</h1>
-<p style="text-align:center"; >PET CLINIC REPORT CARD</p>
-<hr class="style2">
+    <h1 style="text-align:center;">LIGHT FOUNDATION PETCLINIC</h1>
+    <p style="text-align:center" ;>PET CLINIC REPORT CARD</p>
+    <hr class="style2">
 
-<h1>Owner Information</h1>
+    <h1>Owner Information</h1>
 
-<table style="width:50%">
-  <tr>
-    <td>name</td>
-    <td>{{ owner.first_name }}  {{ owner.last_name }}</td>
+    <table style="width:50%">
+        <tr>
+            <td>name</td>
+            <td>{{ owner.first_name }} {{ owner.last_name }}</td>
 
-  </tr>
-<tr>
+        </tr>
+        <tr>
             <td>Address</td>
             <td>{{ owner.address }}</td>
-          </tr>
-          <tr>
+        </tr>
+        <tr>
 
             <td>City</td>
             <td>{{owner.city}}</td>
-          </tr>
+        </tr>
 
-          <tr>
+        <tr>
             <td>Telephone</td>
             <td>{{owner.telephone}}</td>
-          </tr>
-  </tr>
-</table>
-
-
-
- <h1><strong>Pets and Visits</strong></h1>
-{% for pet in owner.pet_set.all %}
-      <table class="table table-striped" >
-      <tr>
-        <td valign="top">
-         <dl>
-			<dt>Name   :    </dt>
-            <dd >{{pet.name}}</dd>
-             <br>
-            <dt>Birth Date   :    </dt>
-            <dd >{{ pet.birth_date }}</dd>
-              <br>
-            <dt>Type   :    </dt>
-            <dd >{{pet.pet_type.name }}</dd>
-         </dl>
-        </td>
-        <td valign="top">
-          <table class="table-condensed">
-            <thead>
-              <tr>
-                <th>Visit Date</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-              {% for visit in pet.visit_set.all %}
-            <tr>
-              <td>{{ visit.visit_date }}</td>
-              <td>{{ visit.description }} </td>
-            </tr>
-              {% endfor %}
-          </table>
-        </td>
-      </tr>
+        </tr>
+        </tr>
     </table>
-{% endfor %}
+
+    <h1><strong>Pets and Visits</strong></h1> {% for pet in owner.pet_set.all %}
+    <table class="table table-striped">
+        <tr>
+            <td valign="top">
+                <dl>
+                    <dt>Name   :    </dt>
+                    <dd>{{pet.name}}</dd>
+                    <br>
+                    <dt>Birth Date   :    </dt>
+                    <dd>{{ pet.birth_date }}</dd>
+                    <br>
+                    <dt>Type   :    </dt>
+                    <dd>{{pet.pet_type.name }}</dd>
+                </dl>
+            </td>
+            <td valign="top">
+                <table class="table-condensed">
+                    <thead>
+                        <tr>
+                            <th>Visit Date</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    {% for visit in pet.visit_set.all %}
+                    <tr>
+                        <td>{{ visit.visit_date }}</td>
+                        <td>{{ visit.description }} </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </td>
+        </tr>
+    </table>
+    {% endfor %}
     <h1>DOCTOR RECOMMENDATION </h1>
 
-      <table class="table table-striped" >
-      <tr>
-        <td valign="top">
-         <table class="table-condensed">
-            <thead>
-              <tr>
-                <th>SL NO</th>
-                <th>MEDICINE LIST </th>
-              </tr>
-            </thead>
-            <tr>
-              <td>1</td>
-              <td> </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td> </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td> </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td> </td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td> </td>
-            </tr>
-          </table>
-        </td>
-        <td valign="top">
-          <table class="table-condensed">
-            <thead>
-              <tr>
-                <th>SL NO</th>
-                <th>TEST LIST </th>
-              </tr>
-            </thead>
-            <tr>
-              <td>1</td>
-              <td> </td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td> </td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td> </td>
-            </tr>
-            <tr>
-              <td>4</td>
-              <td> </td>
-            </tr>
-            <tr>
-              <td>5</td>
-              <td> </td>
-            </tr>
-          </table>
-        </td>
+    <table class="table table-striped">
+        <tr>
+            <td valign="top">
+                <table class="table-condensed">
+                    <thead>
+                        <tr>
+                            <th>SL NO</th>
+                            <th>MEDICINE LIST </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>1</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td> </td>
+                    </tr>
+                </table>
+            </td>
+            <td valign="top">
+                <table class="table-condensed">
+                    <thead>
+                        <tr>
+                            <th>SL NO</th>
+                            <th>TEST LIST </th>
+                        </tr>
+                    </thead>
+                    <tr>
+                        <td>1</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td> </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td> </td>
+                    </tr>
+                </table>
+            </td>
 
-      </tr>
+        </tr>
     </table>
 
-
-
 </body>
+
 </html>
-
-
-
-

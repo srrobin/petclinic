@@ -20,7 +20,6 @@ class PetType(models.Model):
         return "Pet type: " + self.name
 
 
-
 class Pet(models.Model):
     name = models.CharField(max_length=128)
     birth_date = models.DateField(auto_now=False, null=True, blank=True)

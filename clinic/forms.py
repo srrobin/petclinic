@@ -29,9 +29,10 @@ class PetForm(forms.ModelForm):
         widgets = {
             'name': forms.TextInput(attrs={'class': 'form-control'}),
             'birth_date': forms.TextInput(attrs={'class': 'form-control'}),
-            'city': forms.TextInput(attrs={'class': 'form-control'}),
+            'owner': forms.Select(attrs={'class': 'form-control'}),
             'pet_type': forms.Select(attrs={'class': 'form-control'})
         }
+
 
 
 
@@ -46,5 +47,6 @@ class VisitForm(forms.ModelForm):
 
         widgets = {
             'visit_date': forms.TextInput(attrs={'class': 'form-control'}),
-            'description': forms.TextInput(attrs={'class': 'form-control'})
+            'description': forms.TextInput(attrs={'class': 'form-control'}),
+            'pet': forms.Select(attrs={'class': 'form-control'})
         }

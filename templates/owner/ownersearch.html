@@ -1,68 +1,62 @@
 {% extends 'base/base.html' %}
 {% load static %}
-
-  {% block title %}search {% endblock %}
-
-
-
+{% block title %}search {% endblock %}
 {% block content %}
 <div class="row">
     <div class="col-md-4 mt-3 ">
         <a href="{% url 'add_owner' %}" class="btn btn-block btn-secondary" type="submit" role="button">Add Owner</a>
 
-                <div class="card text-white bg-secondary mt-3 mb-3" style="width:348px">
-                  <div class="card-header">Info</div>
-                  <div class="card-body">
-                    <h5 class="card-title">Petclinic </h5>
-                    <p class="card-text">
-                          Sed ut auctor lorem, vel auctor augue. Nunc in sodales ligula. Sed ut sollicitudin est,
-                          vel porta ligula. Aenean consequat molestie felis, et finibus ipsum volutpat eu.
-                          Sed ut auctor lorem, vel auctor augue. Nunc in sodales ligula. Sed ut sollicitudin est,
-                          vel porta ligula. Aenean consequat molestie felis, et finibus ipsum volutpat eu.
-                          Sed ut sollicitudin est,vel porta ligula. Aenean consequat molestie felis, et finibus .
-                    </p>
-                  </div>
-                </div>
-    </div>
-  <div class="col-md-8 mt-3  ">
-
-      <div class="search-area mb-5">
-
-      <form method="post" >{% csrf_token %}
-            <div class="input-group md-form form-sm form-2 pl-0">
-                <input type="text" name="srh" class="form-control" placeholder="inter yor first name or city">
-          <div class="input-group-append">
-            <button type="submit" class="input-group-text lime lighten-2" id="basic-text1"><i class="fa fa-search text-grey"
-                aria-hidden="true"></i></button>
-          </div>
+        <div class="card text-white bg-secondary mt-3 mb-3">
+            <div class="card-header">Info</div>
+            <img class="card-img-top " src="{% static 'img/pet2.png'%}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Petclinic </h5>
+                <p class="card-text">
+                    Search by typing your first name or your city name
+                </p>
+            </div>
         </div>
-      </form>
+    </div>
+    <div class="col-md-8 mt-3  ">
 
-      </div>
-      {% if sr %}
-          <table class="table table-hover ">
-              <thead class="thead-dark">
-                <tr>
-                  <th scope="col">sl no.</th>
-                  <th scope="col">Name</th>
-                  <th scope="col">Address</th>
-                  <th scope="col">City</th>
-                  <th scope="col">Telephone</th>
-                </tr>
-              </thead>
-              <tbody>
-              {% for owner in sr %}
-                <tr>
-                  <th scope="row">{{forloop.counter}}</th>
-                  <td><a href="/pet/owners/{{ owner.id }}">{{ owner.first_name }} {{ owner.last_name }}</a></td>
-                  <td>{{owner.address}}</td>
-                  <td>{{owner.city}}</td>
-                  <td>{{owner.telephone}}</td>
-                </tr>
-              {% endfor %}
-              </tbody>
-          </table>
-      {% endif %}
-  </div>
+        <div class="search-area mb-5">
+
+            <form method="post">{% csrf_token %}
+                <div class="input-group md-form form-sm form-2 pl-0">
+                    <input type="text" name="srh" class="form-control" placeholder="inter yor first name or city">
+                    <div class="input-group-append">
+                        <button type="submit" class="input-group-text lime lighten-2" id="basic-text1"><i class="fa fa-search text-grey" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        {% if sr %}
+        <div class="table-responsive-sm">
+            <table class="table table-hover ">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">sl no.</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Address</th>
+                        <th scope="col">City</th>
+                        <th scope="col">Telephone</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for owner in sr %}
+                    <tr>
+                        <th scope="row">{{forloop.counter}}</th>
+                        <td><a href="/pet/owners/{{ owner.id }}">{{ owner.first_name }} {{ owner.last_name }}</a></td>
+                        <td>{{owner.address}}</td>
+                        <td>{{owner.city}}</td>
+                        <td>{{owner.telephone}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        {% endif %}
+    </div>
 </div>
 {% endblock %}
