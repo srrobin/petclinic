@@ -2,40 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="53aeaff0-a574-4b7c-b469-946a40b49fc5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/templates/auth/alart.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clinic/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinic/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clinic/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinic/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/clinic/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/clinic/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core_app/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/core_app/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/dj2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/pets1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/pets2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/pets3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/img/pets5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/change_password.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/change_password.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/message.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/message.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/passwordReset.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/passwordReset.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/password_reset_confirm.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/password_reset_confirm.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/password_reset_done.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/password_reset_done.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/auth/update_register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/auth/update_register.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base/nav.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base/nav.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/home.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/owner/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/owner/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/owner/owneradd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/owner/owneradd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/owner/owneredit.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/owner/owneredit.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/owner/ownersearch.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/owner/ownersearch.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/owner/petadd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/owner/petadd.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/owner/visitadd.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/owner/visitadd.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pdf.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pdf.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/petdoc/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/petdoc/list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/veterinarian/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/veterinarian/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -72,15 +41,15 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="47" />
-          <entry key="html" value="1148" />
-          <entry key="py" value="831" />
+          <entry key="html" value="1174" />
+          <entry key="py" value="870" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="47" />
-          <entry key="HTML" value="1148" />
-          <entry key="Python" value="831" />
+          <entry key="HTML" value="1174" />
+          <entry key="Python" value="870" />
         </counts>
       </usages-collector>
     </session>
@@ -91,7 +60,7 @@
         <entry file="file://$PROJECT_DIR$/templates/owner/visitadd.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="233">
-              <caret line="11" column="45" lean-forward="true" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+              <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -110,11 +79,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clinic/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="432">
-              <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+            <state relative-caret-position="410">
+              <caret line="49" column="76" selection-start-line="49" selection-start-column="76" selection-end-line="49" selection-end-column="76" />
             </state>
           </provider>
         </entry>
@@ -122,17 +91,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/clinic/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="35" column="7" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="7" />
+            <state relative-caret-position="302">
+              <caret line="32" column="11" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="11" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/clinic/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
+            <state relative-caret-position="184">
+              <caret line="104" selection-start-line="104" selection-end-line="104" />
               <folding>
                 <element signature="e#0#44#0" expanded="true" />
               </folding>
@@ -191,10 +160,10 @@
         <option value="$PROJECT_DIR$/templates/owner/owneradd.html" />
         <option value="$PROJECT_DIR$/templates/owner/petadd.html" />
         <option value="$PROJECT_DIR$/clinic/models.py" />
-        <option value="$PROJECT_DIR$/templates/owner/visitadd.html" />
         <option value="$PROJECT_DIR$/templates/owner/owner.html" />
-        <option value="$PROJECT_DIR$/clinic/views.py" />
         <option value="$PROJECT_DIR$/clinic/forms.py" />
+        <option value="$PROJECT_DIR$/templates/owner/visitadd.html" />
+        <option value="$PROJECT_DIR$/clinic/views.py" />
       </list>
     </option>
   </component>
@@ -577,34 +546,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinic/views.py">
+    <entry file="file://$PROJECT_DIR$/clinic/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="116" lean-forward="true" selection-start-line="116" selection-end-line="116" />
-          <folding>
-            <element signature="e#0#44#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="410">
+          <caret line="49" column="76" selection-start-line="49" selection-start-column="76" selection-end-line="49" selection-end-column="76" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/clinic/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="35" column="7" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="7" />
+        <state relative-caret-position="302">
+          <caret line="32" column="11" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/templates/owner/visitadd.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
-          <caret line="11" column="45" lean-forward="true" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+          <caret line="27" column="18" selection-start-line="27" selection-start-column="18" selection-end-line="27" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/clinic/forms.py">
+    <entry file="file://$PROJECT_DIR$/clinic/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="50" column="31" selection-start-line="50" selection-start-column="31" selection-end-line="50" selection-end-column="31" />
+        <state relative-caret-position="184">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+          <folding>
+            <element signature="e#0#44#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

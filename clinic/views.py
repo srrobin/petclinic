@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from .forms import OwnerForm,PetForm,VisitForm
-from .models import Owner,Pet
+from .models import Owner,Pet,Visit
 
 from django.shortcuts import get_object_or_404
 from django.db.models import Q
