@@ -1,16 +1,40 @@
-import { Modal } from "antd";
+import { Modal, message } from "antd";
 import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import OwnerForm from "./OwnerForm";
+import { detailsOwner, updateOwner } from "../../utils/Axios";
 
 const UpdateOwner = ({ modal1Open, setModal1Open }) => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const queryClient = useQueryClient();
+
+  const { isLoading, isError, error, data: updateData } = useQuery({
+    queryKey: ["petclinic", id],
+    queryFn: ({ signal }) => detailsOwner({ signal, id })
+  });
+
+  const { mutate } = useMutation({
+    mutationFn: updateOwner,
+    onSuccess: (data) => {
+      queryClient.setQueryData(["petclinic", id], data);
+      queryClient.invalidateQueries(["petclinic", id]);
+      navigate(`/owners/${id}`);
+      message.success("Owner updated successfully");
+    },
+  });
+
   const handleSubmit = (values) => {
-    const data = {
+    console.log("🚀 ~ handleSubmit ~ values:", values);
+    mutate({
+      id,
       ...values,
-    };
-    console.log("🚀 ~ handleSubmit ~ data:", data);
-    // mutate(data);
+      pets: updateData.pets
+    });
     setModal1Open(false);
   };
+
   return (
     <Modal
       title="New Customer"
@@ -22,7 +46,7 @@ const UpdateOwner = ({ modal1Open, setModal1Open }) => {
       onCancel={() => setModal1Open(false)}
       footer={false}
     >
-      <OwnerForm initialValue={{}} handleSubmit={handleSubmit} />
+      <OwnerForm initialValue={updateData} handleSubmit={handleSubmit} />
     </Modal>
   );
 };

@@ -31,7 +31,7 @@ const PetClinic = () => {
     error,
     data: owner,
   } = useQuery({
-    queryKey: ["petclinic"],
+    queryKey: ["petclinic", id],
     queryFn: () =>
       AxiosInstance.get(`/petclinic/${id}`).then((res) => res.data),
   });
@@ -57,12 +57,12 @@ const PetClinic = () => {
         }
           items={
             [{
-              key: "1",
+              id: "1",
               label: "Name",
               children: owner ? owner?.name : "",
             },
             {
-              key: "2",
+              id: "2",
               label: "Email",
               children: owner ? owner?.email : "",
             },

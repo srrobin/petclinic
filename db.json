@@ -1,368 +1,147 @@
 {
-    "petclinic": [
+  "petclinic": [
+    {
+      "name": "John Doe 123",
+      "email": "jone@gmail.com",
+      "phone": "01827578768",
+      "address": "12/2, Mymensing",
+      "city": "Mymensing",
+      "status": 1,
+      "pets": [
         {
-          "id": "1",
-          "name": "John Doe",
-          "email": "jone@gmail.com",
-          "phone": "01827578768",
-          "address": "12/2, Mymensing",
-          "city": "Mymensing",
-          "status": 1,
-    
-          "pets": [
+          "id": "101",
+          "name": "Max",
+          "species": "Dog",
+          "birthday": "2019-8-12",
+          "visits": [
             {
-              "id": "101",
-              "name": "Max",
-              "species": "Dog",
-              "birthday": "2019-8-12",
-              "visits": [
-                {
-                  "id": "1001",
-                  "date": "2024-04-10",
-                  "reason": "Annual checkup"
-                },
-                {
-                  "id": "1002",
-                  "date": "2024-02-15",
-                  "reason": "Vaccination"
-                }
-              ]
+              "id": "1001",
+              "date": "2024-04-10",
+              "reason": "Annual checkup"
             },
             {
-              "id": "102",
-              "name": "Whiskers",
-              "species": "Cat",
-              "birthday": "2013-8-12",
-              "visits": [
-                {
-                  "id": "1002",
-                  "date": "2023-12-20",
-                  "reason": "Flea treatment"
-                }
-              ]
+              "id": "1002",
+              "date": "2024-02-15",
+              "reason": "Vaccination"
             }
           ]
         },
         {
-          "id":"2",
-          "name": "Sayam Rahman",
-          "email": "sayam@gmail.com",
-          "phone": "01711337897",
-          "address": "73/2,dhaka",
-          "city": "dhaka",
-          "status": 2,
-    
-          "pets": [
+          "id": "102",
+          "name": "Whiskers",
+          "species": "Cat",
+          "birthday": "2013-8-12",
+          "visits": [
             {
-              "id": "103",
-              "name": "Max",
-              "species": "Dog",
-              "birthday": "2019-8-12",
-              "visits": [
-                {
-                  "id": "1003",
-                  "date": "2024-04-10",
-                  "reason": "Annual checkup"
-                },
-                {
-                  "id":" 1004",
-                  "date": "2024-02-15",
-                  "reason": "Vaccination"
-                }
-              ]
-            },
-            {
-              "id": "104",
-              "name": "Whiskers",
-              "species": "Cat",
-              "visits": [
-                {
-                  "id":"1005",
-                  "date": "2023-12-20",
-                  "reason": "Flea treatment"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "id":"3",
-          "name": "Razon Ahmed",
-          "email": "razon@gmail.com",
-          "phone": "01799337897",
-          "address": "71/2,dhaka",
-          "city": "dhaka",
-          "status":3,
-    
-          "pets": [
-            {
-              "id":"105",
-              "name": "Max",
-              "species": "Dog",
-              "birthday": "2019-8-12",
-              "visits": [
-                {
-                  "id": "1003",
-                  "date": "2024-04-10",
-                  "reason": "Annual checkup"
-                },
-                {
-                  "id": "1004",
-                  "date": "2024-02-15",
-                  "reason": "Vaccination"
-                }
-              ]
-            },
-            {
-              "id": "106",
-              "name": "Whiskers",
-              "species": "Cat",
-              "birthday": "2011-8-12",
-              "visits": [
-                {
-                  "id": "1005",
-                  "date": "2023-12-20",
-                  "reason": "Flea treatment"
-                }
-              ]
+              "id": "1002",
+              "date": "2023-12-20",
+              "reason": "Flea treatment"
             }
           ]
         }
-        
       ],
-      "veterinarians" : [
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "name": "Sayam Rahman",
+      "email": "sayam@gmail.com",
+      "phone": "01711337897",
+      "address": "73/2,dhaka",
+      "city": "dhaka",
+      "status": 2,
+      "pets": [
         {
-          "id": "1",
-          "name": "Dr. Smith",
-          "specialties": "Dermatology, Surgery"
+          "id": "103",
+          "name": "Max",
+          "species": "Dog",
+          "birthday": "2019-8-12",
+          "visits": [
+            {
+              "id": "1003",
+              "date": "2024-04-10",
+              "reason": "Annual checkup"
+            },
+            {
+              "id": " 1004",
+              "date": "2024-02-15",
+              "reason": "Vaccination"
+            }
+          ]
         },
         {
-          "id": "2",
-          "name": "Dr. Johnson",
-          "specialties": "Internal Medicine, Oncology"
-        },
-        {
-          "id": "3",
-          "name": "Dr. Williams",
-          "specialties": "Neurology"
-        },
-        {
-          "id": "4",
-          "name": "Dr. Brown",
-          "specialties": "Radiology"
-        },
-        {
-          "id": "5",
-          "name": "Dr. Jones",
-          "specialties": " Ophthalmology"
-        },
-        {
-          "id": "6",
-          "name": "Dr. Garcia",
-          "specialties": "Anesthesiology"
-        },
-        {
-          "id": "7",
-          "name": "Dr. Martinez",
-          "specialties": " Exotics"
-        },
-        {
-          "id": "8",
-          "name": "Dr. Anderson",
-          "specialties": "Avian"
-        },
-        {
-          "id": "9",
-          "name": "Dr. Lee",
-          "specialties": "Endocrinology"
-        },
-        {
-          "id": "10",
-          "name": "Dr. Nguyen",
-          "specialties": " Zoo Medicine"
+          "id": "104",
+          "name": "Whiskers",
+          "species": "Cat",
+          "visits": [
+            {
+              "id": "1005",
+              "date": "2023-12-20",
+              "reason": "Flea treatment"
+            }
+          ]
         }
-      ],
-      "species" : [
-        "Dog",
-        "Cat",
-        "Bird",
-        "Rabbit",
-        "Hamster",
-        "Guinea Pig",
-        "Fish",
-        "Snake",
-        "Turtle",
-        "Lizard"
-      ],
-      "petshop": [ 
+      ]
+    },
+    {
+      "id": "3",
+      "name": "Razon Ahmed",
+      "email": "razon@gmail.com",
+      "phone": "01799337897",
+      "address": "71/2,dhaka",
+      "city": "dhaka",
+      "status": 3,
+      "pets": [
         {
-         "id":"1",
-         "title": "Premium Dog Food",
-         "description": "High-quality dog food with essential nutrients",
-         "price": 29.99,
-         "discountPercentage": 5,
-         "rating": 4.5,
-         "stock": 100,
-         "brand": "PetFoods Inc.",
-         "category": "Pet Food",
-         "thumbnail": "premium_dog_food_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/8334/8334173.png"
-       },
-       {
-         "id": "2",
-         "title": "Healthy Cat Food",
-         "description": "Nutritious cat food for optimal health",
-         "price": 24.99,
-         "discountPercentage": 0,
-         "rating": 4.7,
-         "stock": 80,
-         "brand": "Whiskers Ltd.",
-         "category": "Pet Food",
-         "thumbnail": "healthy_cat_food_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/2334/2334544.png"
-       },
-       {
-         "id": "3",
-         "title": "Cozy Dog Sweater",
-         "description": "Warm and stylish sweater for your dog",
-         "price": 19.99,
-         "discountPercentage": 10,
-         "rating": 4.2,
-         "stock": 50,
-         "brand": "PetWear Co.",
-         "category": "Pet Clothing",
-         "thumbnail": "cozy_dog_sweater_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/12814/12814991.png"
-       },
-       {
-         "id": "4",
-         "title": "Cat Bow Tie",
-         "description": "Cute bow tie for your fashionable cat",
-         "price": 9.99,
-         "discountPercentage": 0,
-         "rating": 4.8,
-         "stock": 60,
-         "brand": "Purrfect Accessories",
-         "category": "Pet Clothing",
-         "thumbnail": "cat_bow_tie_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/6628/6628328.png"
-       },
-       {
-         "id": "5",
-         "title": "Interactive Dog Toy",
-         "description": "Keep your dog entertained with this interactive toy",
-         "price": 14.99,
-         "discountPercentage": 15,
-         "rating": 4.6,
-         "stock": 70,
-         "brand": "Playful Pets",
-         "category": "Pet Toys",
-         "thumbnail": "interactive_dog_toy_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/9134/9134573.png"
-       },
-       {
-         "id": "6",
-         "title": "Scratching Post",
-         "description": "A must-have for your cat's scratching needs",
-         "price": 34.99,
-         "discountPercentage": 0,
-         "rating": 4.4,
-         "stock": 40,
-         "brand": "Paws & Claws",
-         "category": "Pet Furniture",
-         "thumbnail": "scratching_post_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/5607/5607401.png"
-       },
-       {
-         "id": "7",
-         "title": "Fish Tank",
-         "description": "Stylish fish tank for your aquatic pets",
-         "price": 99.99,
-         "discountPercentage": 0,
-         "rating": 4.9,
-         "stock": 20,
-         "brand": "Aquatic Wonders",
-         "category": "Aquarium",
-         "thumbnail": "fish_tank_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/8277/8277460.png"
-       },
-       {
-         "id": "8",
-         "title": "Bird Cage",
-         "description": "Spacious cage for your feathered friend",
-         "price": 49.99,
-         "discountPercentage": 0,
-         "rating": 4.7,
-         "stock": 30,
-         "brand": "Feather Haven",
-         "category": "Bird Supplies",
-         "thumbnail": "bird_cage_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/6356/6356546.png"
-       },
-       {
-         "id": "9",
-         "title": "Hamster Wheel",
-         "description": "Exercise wheel for your active hamster",
-         "price": 8.99,
-         "discountPercentage": 0,
-         "rating": 4.3,
-         "stock": 50,
-         "brand": "Tiny Trails",
-         "category": "Small Animal Supplies",
-         "thumbnail": "hamster_wheel_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/2295/2295216.png"
-       },
-       {
-         "id": "10",
-         "title": "Reptile Heat Lamp",
-         "description": "Provide warmth for your reptile with this heat lamp",
-         "price": 19.99,
-         "discountPercentage": 0,
-         "rating": 4.6,
-         "stock": 40,
-         "brand": "Cold-Blooded Comforts",
-         "category": "Reptile Supplies",
-         "thumbnail": "reptile_heat_lamp_thumbnail.jpg",
-         "images":"https://cdn-icons-png.flaticon.com/128/891/891045.png"
-       },
-       {
-         "id": "11",
-         "title": "Small Animal Cage",
-         "description": "Cozy cage for your small furry friend",
-         "price": 39.99,
-         "discountPercentage": 10,
-         "rating": 4.5,
-         "stock": 25,
-         "brand": "Furry Friends",
-         "category": "Small Animal Supplies",
-         "thumbnail": "small_animal_cage_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/6179/6179937.png"
-       },
-       {
-         "id": "12",
-         "title": "Turtle Dock",
-         "description": "Basking platform for your aquatic turtle",
-         "price": 14.99,
-         "discountPercentage": 0,
-         "rating": 4.8,
-         "stock": 30,
-         "brand": "Aquatic Reptiles",
-         "category": "Reptile Supplies",
-         "thumbnail": "turtle_dock_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/616/616651.png"
-       },
-       {
-         "id": "13",
-         "title": "Rabbit Hutch",
-         "description": "Comfortable hutch for your pet rabbit",
-         "price": 69.99,
-         "discountPercentage": 0,
-         "rating": 4.7,
-         "stock": 20,
-         "brand": "Hoppy Homes",
-         "category": "Small Animal Supplies",
-         "thumbnail": "rabbit_hutch_thumbnail.jpg",
-         "images": "https://cdn-icons-png.flaticon.com/128/5228/5228465.png"
-         }
-         ]
-  }
+          "id": "105",
+          "name": "Max",
+          "species": "Dog",
+          "birthday": "2019-8-12",
+          "visits": [
+            {
+              "id": "1003",
+              "date": "2024-04-10",
+              "reason": "Annual checkup"
+            },
+            {
+              "id": "1004",
+              "date": "2024-02-15",
+              "reason": "Vaccination"
+            }
+          ]
+        },
+        {
+          "id": "106",
+          "name": "Whiskers",
+          "species": "Cat",
+          "birthday": "2011-8-12",
+          "visits": [
+            {
+              "id": "1005",
+              "date": "2023-12-20",
+              "reason": "Flea treatment"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MD Shihab  123",
+      "email": "mdshihab573@gmail.com",
+      "phone": "01912347237",
+      "address": "73/A,east kazipara ,mirpur",
+      "city": "dhaka 123",
+      "status": "1",
+      "id": "31c3"
+    },
+    {
+      "name": "Md. Sayam 123",
+      "email": "srrobin07@gmail.com",
+      "phone": "01827578768",
+      "address": "135.creacent road ,green road ,dhaka",
+      "city": "dhanmondi",
+      "status": "1",
+      "id": "cda3"
+    }
+  ]
+}

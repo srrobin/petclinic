@@ -8,31 +8,31 @@ import {
   Row,
   Select,
   Space,
+  message,
 } from "antd";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import {
   CaretLeftOutlined,
   CheckCircleFilled,
   ReloadOutlined,
 } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 
 const { Option } = Select;
 
 const OwnerForm = ({ handleSubmit, initialValue }) => {
-  const initialValues = {
-    name: initialValue.name || "",
-    eamil: initialValue.eamil || "",
-    phone: initialValue.phone || "",
-    address: initialValue.address || "",
-    city: initialValue.city || "",
-    status: initialValue.status || "",
-  };
   const [form] = Form.useForm();
+
+  useEffect(() => {
+    form.setFieldsValue(initialValue);
+  }, [initialValue]);
+
   const onFinish = (values) => {
     console.log("🚀 ~ onFinish ~ values:", values);
     handleSubmit(values);
     form.resetFields();
+    // message.success("Owner added successfully");
   };
   return (
     <Form
@@ -41,18 +41,17 @@ const OwnerForm = ({ handleSubmit, initialValue }) => {
       layout="vertical"
       autoComplete="off"
       onFinish={onFinish}
-      initialValues={initialValues}
     >
 
       <Row gutter={[16, 8]}>
         <Col span={12}>
           <Form.Item
             name="name"
-            label=" Name"
+            label="Name"
             validateDebounce={1000}
             rules={[
               {
-                max: 10,
+                max: 60,
                 required: true,
                 message: "Please enter  name",
               },
@@ -63,7 +62,7 @@ const OwnerForm = ({ handleSubmit, initialValue }) => {
         </Col>
         <Col span={12}>
           <Form.Item
-            name="statue"
+            name="status"
             label="Status"
             rules={[
               {
@@ -88,7 +87,7 @@ const OwnerForm = ({ handleSubmit, initialValue }) => {
             label="Email"
             rules={[
               {
-                max: 30,
+                max: 50,
                 required: true,
                 message: " enter email ",
               },
@@ -120,7 +119,7 @@ const OwnerForm = ({ handleSubmit, initialValue }) => {
             label="Address"
             rules={[
               {
-                max: 5,
+                max: 200,
                 required: true,
                 message: " enter your address",
               },
