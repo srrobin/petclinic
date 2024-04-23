@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Space, Table, Tag } from "antd";
+import { Button, ConfigProvider, Space, Table, Tag } from "antd";
 import { useQuery } from "@tanstack/react-query";
 import { AxiosInstance } from "../../utils/Axios";
 import GlobalLoader from "../../utils/GlobalLoader";
@@ -11,7 +11,7 @@ const Veterinarians = () => {
   });
 
   const generateRandomColor = () => {
-    const colors = ["purple", "geekblue", "blue", "cyan", "magenta", "red", "volcano", "orange", "green"];
+    const colors = ["purple", "geekblue", "blue", "cyan", "volcano", "orange", "green"];
     return colors[Math.floor(Math.random() * colors.length)];
   };
 
@@ -38,15 +38,28 @@ const Veterinarians = () => {
     }
   ];
   return (
-    <Table
-      columns={columns}
-      dataSource={data}
-      pagination={false}
-      size="small"
-      scroll={{
-        y: 350,
+    <ConfigProvider
+      theme={{
+        components: {
+          Table: {
+            headerBg: "rgb(4, 47, 117)",
+            headerColor: "rgb(240, 240, 240)",
+            headerSplitColor: "#042f75",
+            colorLink: "#042f75"
+          }
+        },
       }}
-    />
+    >
+      <Table
+        columns={columns}
+        dataSource={data}
+        pagination={false}
+        size="small"
+        scroll={{
+          y: 350,
+        }}
+      />
+    </ConfigProvider>
   );
 };
 

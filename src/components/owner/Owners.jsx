@@ -76,10 +76,10 @@ const Owners = () => {
           Card: {
             colorTextHeading: "#ffffff",
             algorithm: true,
-            headerBg: "#28100b",
+            headerBg: "#042f75",
           },
           Button: {
-            defaultBg: "#28100b",
+            defaultBg: "#042f75",
             defaultHoverBg: "#28100b",
             colorText: "#abaaaa",
             defaultHoverColor: "#F86900",
@@ -87,7 +87,7 @@ const Owners = () => {
             defaultHoverBorderColor: "#F86900",
           },
           Pagination: {
-            colorPrimary: "#28100b",
+            colorPrimary: "#042f75",
             colorPrimaryHover: "#F86900"
           }
         },

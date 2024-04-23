@@ -1,5 +1,5 @@
 import React from "react";
-import { Layout, theme } from "antd";
+import { ConfigProvider, Layout, theme } from "antd";
 import HeaderSection from "./layout/HeaderSection";
 import Breadcrumbs from "./layout/Breadcrumbs";
 import FooterSection from "./layout/FooterSection";
@@ -16,16 +16,25 @@ const App = () => {
     borderRadius: borderRadiusLG,
   };
   return (
-    <Layout>
-      <HeaderSection />
-      <Content style={{ padding: "0 48px", }}>
-        <Breadcrumbs />
-        <div style={contentStyle}>
-          <MainRoutes />
-        </div>
-      </Content>
-      <FooterSection />
-    </Layout>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: "#042f75",
+          colorInfo: "#042f75"
+        },
+      }}
+    >
+      <Layout>
+        <HeaderSection />
+        <Content style={{ padding: "0 48px", }}>
+          <Breadcrumbs />
+          <div style={contentStyle}>
+            <MainRoutes />
+          </div>
+        </Content>
+        <FooterSection />
+      </Layout>
+    </ConfigProvider>
   );
 };
 export default App;

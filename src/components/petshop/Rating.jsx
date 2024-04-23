@@ -7,7 +7,7 @@ const Rating = ({ rating }) => {
   return (
     <>
       { [...Array(5)].map((_, i) => {
-        return rate > i ? <TiStarFullOutline style={{ color: "red" }} /> : <CiStar />;
+        return rate > i ? <TiStarFullOutline style={{ color: "#042f75" }} /> : <CiStar />;
       })}
     </>
   );

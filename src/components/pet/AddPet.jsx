@@ -1,4 +1,4 @@
-import { Modal, message } from "antd";
+import { Modal, Tag, message } from "antd";
 import React from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -6,7 +6,7 @@ import PetForm from "./PetForm";
 import { AxiosInstance, createOwner, createPet, fetchPets } from "../../utils/Axios";
 import GlobalLoader from "../../utils/GlobalLoader";
 
-const AddPet = ({ modal2Open, setModal2Open }) => {
+const AddPet = ({ modal2Open, setModal2Open, owner }) => {
   const { id } = useParams();
   const navigate = useNavigate();
   const quaryclient = useQueryClient();
@@ -48,7 +48,10 @@ const AddPet = ({ modal2Open, setModal2Open }) => {
       onCancel={() => setModal2Open(false)}
       footer={false}
     >
-      <PetForm initialValue={{}} handleSubmit={handleSubmit} />
+      <>
+        Owner :  <Tag color="geekblue"> {owner?.name}</Tag>
+        <PetForm initialValue={{}} handleSubmit={handleSubmit} />
+      </>
     </Modal>
   );
 };

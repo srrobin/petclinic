@@ -199,7 +199,11 @@ const PetClinic = () => {
               ))}
           </Col>
           <UpdateOwner modal1Open={modal1Open} setModal1Open={setModal1Open} />
-          <AddPet modal2Open={modal2Open} setModal2Open={setModal2Open} />
+          <AddPet
+            owner={owner}
+            modal2Open={modal2Open}
+            setModal2Open={setModal2Open}
+          />
           <>
             <UpdatePet
               petId={petId}
