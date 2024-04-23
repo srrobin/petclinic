@@ -1,15 +1,6 @@
-import {
-  Button,
-  Col,
-  DatePicker,
-  Form,
-  Input,
-  Modal,
-  Row,
-  Select,
-  Space,
-} from "antd";
-import React, { useState } from "react";
+/* eslint-disable max-len */
+import { Button, Col, DatePicker, Form, Input, Row, Select, Space } from "antd";
+import React, { useEffect } from "react";
 
 import {
   CaretLeftOutlined,
@@ -17,31 +8,42 @@ import {
   ReloadOutlined,
 } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
+import dayjs from "dayjs";
 import { AxiosInstance } from "../../utils/Axios";
 
 const { Option } = Select;
 
 const PetForm = ({ handleSubmit, initialValue }) => {
+  const [form] = Form.useForm();
   const {
     isLoading,
     isError,
     data: species,
   } = useQuery({
     queryKey: ["species"],
-    queryFn: () =>
-      AxiosInstance.get("/species").then((res) => res.data),
+    queryFn: () => AxiosInstance.get("/species").then((res) => res.data),
   });
-  const initialValues = {
-    name: initialValue.name || "",
-    species: initialValue.species || "",
-    birthday: initialValue.birthday || "",
-  };
-  const [form] = Form.useForm();
+
+  useEffect(() => {
+    form.setFieldsValue({
+      petname: initialValue?.petname || "",
+      species: initialValue?.species || "",
+      birthday: initialValue?.birthday ? dayjs(initialValue.birthday) : null,
+    });
+  }, [initialValue]);
   const onFinish = (values) => {
-    console.log("🚀 ~ onFinish ~ values:", values);
-    handleSubmit(values);
+    const formattedValues = {
+      ...values,
+    };
+
+    if (values.birthday) {
+      formattedValues.birthday = dayjs(values.birthday).format("YYYY-MM-DD");
+    }
+
+    handleSubmit(formattedValues);
     form.resetFields();
   };
+
   return (
     <Form
       form={form}
@@ -49,18 +51,17 @@ const PetForm = ({ handleSubmit, initialValue }) => {
       layout="vertical"
       autoComplete="off"
       onFinish={onFinish}
-      initialValues={initialValues}
+      // initialValues={initialValue}
     >
-
       <Row gutter={[16, 8]}>
         <Col span={12}>
           <Form.Item
-            name="name"
-            label=" Name"
+            name="petname"
+            label="Name"
             validateDebounce={1000}
             rules={[
               {
-                max: 10,
+                max: 40,
                 required: true,
                 message: "Please enter  name",
               },
@@ -81,9 +82,8 @@ const PetForm = ({ handleSubmit, initialValue }) => {
             ]}
           >
             <Select placeholder="select pet species">
-              {species && species?.map((item) => (
-                <Option value={item}>{item}</Option>
-              ))}
+              {species &&
+                species?.map((item, index) => <Option key={index} value={item}>{item}</Option>)}
             </Select>
           </Form.Item>
         </Col>
@@ -91,8 +91,8 @@ const PetForm = ({ handleSubmit, initialValue }) => {
 
       <Row gutter={[8]}>
         <Col span={24}>
-          <Form.Item name="birthDate" label="Birthday">
-            <DatePicker style={{ width: "100%" }} />
+          <Form.Item name="birthday" label="Birthday">
+            <DatePicker style={{ width: "100%" }} format="YYYY-MM-DD" />
           </Form.Item>
         </Col>
       </Row>

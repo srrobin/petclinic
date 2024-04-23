@@ -4,6 +4,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import OwnerForm from "./OwnerForm";
 import { detailsOwner, updateOwner } from "../../utils/Axios";
+import GlobalLoader from "../../utils/GlobalLoader";
 
 const UpdateOwner = ({ modal1Open, setModal1Open }) => {
   const { id } = useParams();
@@ -11,30 +12,29 @@ const UpdateOwner = ({ modal1Open, setModal1Open }) => {
   const queryClient = useQueryClient();
 
   const { isLoading, isError, error, data: updateData } = useQuery({
-    queryKey: ["petclinic", id],
+    queryKey: ["owners", id],
     queryFn: ({ signal }) => detailsOwner({ signal, id })
   });
 
   const { mutate } = useMutation({
     mutationFn: updateOwner,
     onSuccess: (data) => {
-      queryClient.setQueryData(["petclinic", id], data);
-      queryClient.invalidateQueries(["petclinic", id]);
+      queryClient.setQueryData(["owners", id], data);
+      queryClient.invalidateQueries(["owners", id]);
       navigate(`/owners/${id}`);
       message.success("Owner updated successfully");
     },
   });
 
   const handleSubmit = (values) => {
-    console.log("🚀 ~ handleSubmit ~ values:", values);
     mutate({
       id,
       ...values,
-      pets: updateData.pets
     });
     setModal1Open(false);
   };
-
+  if (isLoading) return <GlobalLoader />;
+  if (isError) return `An error has occurred: ${error.message}`;
   return (
     <Modal
       title="New Customer"

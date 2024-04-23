@@ -1,26 +1,13 @@
-import {
-  Button,
-  Col,
-  DatePicker,
-  Form,
-  Input,
-  Modal,
-  Row,
-  Select,
-  Space,
-  message,
-} from "antd";
-import React, { useEffect, useState } from "react";
+import { Button, Col, Form, Input, Row, Select, Space } from "antd";
+import React, { useEffect } from "react";
 
 import {
   CaretLeftOutlined,
   CheckCircleFilled,
   ReloadOutlined,
 } from "@ant-design/icons";
-import { useNavigate } from "react-router-dom";
 
 const { Option } = Select;
-
 const OwnerForm = ({ handleSubmit, initialValue }) => {
   const [form] = Form.useForm();
 
@@ -29,10 +16,8 @@ const OwnerForm = ({ handleSubmit, initialValue }) => {
   }, [initialValue]);
 
   const onFinish = (values) => {
-    console.log("🚀 ~ onFinish ~ values:", values);
     handleSubmit(values);
     form.resetFields();
-    // message.success("Owner added successfully");
   };
   return (
     <Form

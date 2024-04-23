@@ -1,19 +1,45 @@
-import { Modal } from "antd";
+import { Modal, message } from "antd";
 import React from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import PetForm from "./PetForm";
+import { AxiosInstance, createOwner, createPet, fetchPets } from "../../utils/Axios";
+import GlobalLoader from "../../utils/GlobalLoader";
 
 const AddPet = ({ modal2Open, setModal2Open }) => {
+  const { id } = useParams();
+  const navigate = useNavigate();
+  const quaryclient = useQueryClient();
+
+  const { isLoading, isError, error, data: allpets } = useQuery({
+    queryKey: ["pets",],
+    queryFn: ({ signal }) => fetchPets({ signal })
+  });
+  const { mutate } = useMutation({
+    mutationFn: createPet,
+    onSuccess: (data) => {
+      quaryclient.invalidateQueries(["pets"]);
+      quaryclient.setQueryData(["pets"], data);
+      navigate(`/owners/${id}`);
+      message.success("Pet added successfully");
+    }
+  });
+
   const handleSubmit = (values) => {
-    const data = {
+    const updatePetData = {
+      id: (allpets.length).toString(),
+      ownerId: id,
       ...values,
+      visies: []
     };
-    console.log("🚀 ~ handleSubmit ~ data:", data);
-    // mutate(data);
+    mutate(updatePetData);
     setModal2Open(false);
   };
+  if (isLoading) return <GlobalLoader />;
+  if (isError) return `An error has occurred: ${error.message}`;
   return (
     <Modal
-      title="New Customer"
+      title="Add Pet"
       style={{
         top: 30,
       }}

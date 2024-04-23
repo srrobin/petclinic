@@ -1,95 +1,91 @@
-import {
-  Button,
-  Col,
-  DatePicker,
-  Form,
-  Input,
-  Modal,
-  Row,
-  Select,
-  Space,
-} from "antd";
+/* eslint-disable max-len */
 import React, { useState } from "react";
+import { Button, Col, DatePicker, Form, Input, Modal, Row, Space, message } from "antd";
+import { CaretLeftOutlined, CheckCircleFilled, ReloadOutlined } from "@ant-design/icons";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
+import dayjs from "dayjs";
+import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
+import { useNavigate, useParams } from "react-router-dom";
+import { AxiosInstance, updateVisit } from "../utils/Axios";
 
-import {
-  CaretLeftOutlined,
-  CheckCircleFilled,
-  ReloadOutlined,
-} from "@ant-design/icons";
+const { TextArea } = Input;
 
-const { Option } = Select;
-
-const AddVisite = ({ modal3Open, setModal3Open }) => {
+const AddVisite = ({ modalVisite, setModalVisite, petId, petInfo }) => {
+  const { id } = useParams();
+  const navigate = useNavigate();
   const [form] = Form.useForm();
+  const queryClient = useQueryClient();
+
+  const { mutate } = useMutation({
+    mutationFn: updateVisit,
+    onSuccess: () => {
+      queryClient.invalidateQueries(["pets", petInfo.id]);
+      navigate(`/owners/${id}`);
+      message.success("Visit added successfully");
+    },
+    onError: (error) => {
+      message.error(`Failed to add visit: ${error.message}`);
+    },
+  });
   const onFinish = (values) => {
-    console.log("🚀 ~ onFinish ~ values:", values);
+    const visit = {
+      id: (petInfo.visits ? petInfo.visits.length + 1 : 1).toString(),
+      date: dayjs(values.date).format("YYYY-MM-DD"),
+      reason: values.reason,
+    };
+    const updatedPetInfo = {
+      ...petInfo,
+      visits: [...(petInfo.visits || []), visit],
+    };
+    mutate(updatedPetInfo);
+    setModalVisite(false);
     form.resetFields();
   };
   return (
     <Modal
-      title="New Customer"
-      style={{
-        top: 30,
-      }}
-      open={modal3Open}
-      onOk={() => setModal3Open(false)}
-      onCancel={() => setModal3Open(false)}
-      footer={false}
+      title="Regular Visit"
+      open={modalVisite}
+      onCancel={() => setModalVisite(false)}
+      footer={null}
     >
       <Form
         form={form}
-        name="trigger"
+        name="addVisitForm"
         layout="vertical"
-        autoComplete="off"
         onFinish={onFinish}
       >
         <Row gutter={[8]}>
           <Col span={24}>
-            <Form.Item name="birthDate" label="Birthday">
+            <Form.Item name="date" label="Date">
               <DatePicker style={{ width: "100%" }} />
             </Form.Item>
           </Col>
         </Row>
-        <Row gutter={[16, 8]}>
-          <Col span={12}>
+        <Row gutter={[8]}>
+          <Col span={24}>
             <Form.Item
               name="reason"
-              label=" Description"
-              validateDebounce={1000}
+              label="Description"
               rules={[
-                {
-                  max: 10,
-                  required: true,
-                  message: "Please enter  Description",
-                },
+                { max: 1000, required: true, message: "Please enter a description" }
               ]}
             >
-              <Input placeholder="Please enter  Description" />
+              <TextArea style={{ width: "100%" }} rows={4} />
             </Form.Item>
           </Col>
         </Row>
         <Row>
           <Col span={24}>
-            <div className="submit__btn">
-              <Space>
-                <Button icon={<CaretLeftOutlined />}>Back</Button>
-                <Button icon={<ReloadOutlined />} htmlType="reset">
-                  Reset
-                </Button>
-                <Button
-                  type="primary"
-                  icon={<CheckCircleFilled />}
-                  htmlType="submit"
-                >
-                  Submit
-                </Button>
-              </Space>
-            </div>
+            <Space>
+              <Button icon={<CaretLeftOutlined />} onClick={() => setModalVisite(false)}>Back</Button>
+              <Button icon={<ReloadOutlined />} htmlType="reset">Reset</Button>
+              <Button type="primary" icon={<CheckCircleFilled />} htmlType="submit">Submit</Button>
+            </Space>
           </Col>
         </Row>
       </Form>
     </Modal>
-
   );
 };
 

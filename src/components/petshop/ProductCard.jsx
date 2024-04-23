@@ -17,7 +17,6 @@ const ProductCard = ({ product }) => (
   >
     <Meta
       title={product.title}
-      // description={`price: $${product.price}`}
       description={
         <div>
           {new Intl.NumberFormat("en", { style: "currency", currency: "USD" }).format(product.price)}  <Rating rating={product.rating} />

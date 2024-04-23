@@ -1,5 +1,6 @@
+/* eslint-disable max-len */
 import { UserAddOutlined } from "@ant-design/icons";
-import { Button, Card, Col, ConfigProvider, Row, Space, Table } from "antd";
+import { Button, Card, Col, ConfigProvider, Row, Space, Table, Tooltip } from "antd";
 
 import React, { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
@@ -12,152 +13,19 @@ import { UserStatus } from "../../utils/StatusBox";
 const Owners = () => {
   const [modal1Open, setModal1Open] = useState(false);
   const { isLoading, isError, error, data: owners } = useQuery({
-    queryKey: ["petclinic"],
-    queryFn: () => AxiosInstance.get("/petclinic").then((res) => res.data),
+    queryKey: ["owner"],
+    queryFn: () => AxiosInstance.get("/owners").then((res) => res.data),
   });
 
   if (isLoading) return <GlobalLoader />;
   if (isError) return `An error has occurred: ${error.message}`;
 
-  // const dataSource = [
-  //   {
-  //     id: "1",
-  //     name: "John Doe",
-  //     email: "jone@gmail.com",
-  //     phone: "01827578768",
-  //     address: "12/2, Mymensing",
-  //     city: "Mymensing",
-  //     status: 1,
-
-  //     pets: [
-  //       {
-  //         id: "101",
-  //         name: "Max",
-  //         species: "Dog",
-  //         birthday: "2019-8-12",
-  //         visits: [
-  //           {
-  //             id: "1001",
-  //             date: "2024-04-10",
-  //             reason: "Annual checkup"
-  //           },
-  //           {
-  //             id: "1002",
-  //             date: "2024-02-15",
-  //             reason: "Vaccination"
-  //           }
-  //         ]
-  //       },
-  //       {
-  //         id: "102",
-  //         name: "Whiskers",
-  //         species: "Cat",
-  //         birthday: "2013-8-12",
-  //         visits: [
-  //           {
-  //             id: "1002",
-  //             date: "2023-12-20",
-  //             reason: "Flea treatment"
-  //           }
-  //         ]
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     id: "2",
-  //     name: "Sayam Rahman",
-  //     email: "sayam@gmail.com",
-  //     phone: "01711337897",
-  //     address: "73/2,dhaka",
-  //     city: "dhaka",
-  //     status: 2,
-
-  //     pets: [
-  //       {
-  //         id: "103",
-  //         name: "Max",
-  //         species: "Dog",
-  //         birthday: "2019-8-12",
-  //         visits: [
-  //           {
-  //             id: "1003",
-  //             date: "2024-04-10",
-  //             reason: "Annual checkup"
-  //           },
-  //           {
-  //             id: " 1004",
-  //             date: "2024-02-15",
-  //             reason: "Vaccination"
-  //           }
-  //         ]
-  //       },
-  //       {
-  //         id: "104",
-  //         name: "Whiskers",
-  //         species: "Cat",
-  //         visits: [
-  //           {
-  //             id: " 1005",
-  //             date: "2023-12-20",
-  //             reason: "Flea treatment"
-  //           }
-  //         ]
-  //       }
-  //     ]
-  //   },
-  //   {
-  //     id: "3",
-  //     name: "Razon Ahmed",
-  //     email: "razon@gmail.com",
-  //     phone: "01799337897",
-  //     address: "71/2,dhaka",
-  //     city: "dhaka",
-  //     status: 3,
-
-  //     pets: [
-  //       {
-  //         id: "105",
-  //         name: "Max",
-  //         species: "Dog",
-  //         birthday: "2019-8-12",
-  //         visits: [
-  //           {
-  //             id: "1003",
-  //             date: "2024-04-10",
-  //             reason: "Annual checkup"
-  //           },
-  //           {
-  //             id: "1004",
-  //             date: "2024-02-15",
-  //             reason: "Vaccination"
-  //           }
-  //         ]
-  //       },
-  //       {
-  //         id: "106",
-  //         name: "Whiskers",
-  //         species: "Cat",
-  //         birthday: "2011-8-12",
-  //         visits: [
-  //           {
-  //             id: "1005",
-  //             date: "2023-12-20",
-  //             reason: "Flea treatment"
-  //           }
-  //         ]
-  //       }
-  //     ]
-  //   }
-  // ];
-  console.log("🚀 ~ Owners ~ owners111---->:", owners);
-  // console.log("🚀 ~ Owners ~ owners222---->:", dataSource);
   const columns = [
     {
       title: "Name",
       dataIndex: "name",
       key: "name",
       render: (text, record) => {
-        console.log("Record---------:", record);
         return <Link to={`/owners/${record.id}`}>{text}</Link>;
       },
     },
@@ -194,7 +62,9 @@ const Owners = () => {
       key: "action",
       render: (_, record) => (
         <Space size="middle">
-          <Link to="/">Delete</Link>
+          <Tooltip placement="topLeft" title="you can't delete">
+            <Link to="/owners" disabled>Delete</Link>
+          </Tooltip>
         </Space>
       ),
     },
@@ -247,7 +117,7 @@ const Owners = () => {
             />
           </Card>
         </Col>
-        <AddOwner modal1Open={modal1Open} setModal1Open={setModal1Open} />
+        <AddOwner modal1Open={modal1Open} setModal1Open={setModal1Open} ownerslength={owners.length} />
       </Row>
     </ConfigProvider>
   );

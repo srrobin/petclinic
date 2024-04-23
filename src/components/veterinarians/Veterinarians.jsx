@@ -1,11 +1,8 @@
 import React, { useState } from "react";
 import { Button, Space, Table, Tag } from "antd";
-import { EditOutlined, AppstoreAddOutlined } from "@ant-design/icons";
 import { useQuery } from "@tanstack/react-query";
-import { Link } from "react-router-dom";
 import { AxiosInstance } from "../../utils/Axios";
 import GlobalLoader from "../../utils/GlobalLoader";
-import { UserStatus } from "../../utils/StatusBox";
 
 const Veterinarians = () => {
   const { isLoading, isError, error, data } = useQuery({
@@ -21,7 +18,6 @@ const Veterinarians = () => {
   if (isLoading) return <GlobalLoader />;
   if (isError) return `An error has occurred: ${error.message}`;
 
-  console.log("🚀 ~ UserList ~ column:", data);
   const columns = [
     {
       title: "Name",

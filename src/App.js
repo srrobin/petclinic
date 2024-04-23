@@ -1,29 +1,26 @@
 import React from "react";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { Layout, theme } from "antd";
 import HeaderSection from "./layout/HeaderSection";
 import Breadcrumbs from "./layout/Breadcrumbs";
-import MainRoutes from "./routes/MainRoutes";
 import FooterSection from "./layout/FooterSection";
+import MainRoutes from "./routes/MainRoutes";
 
-const { Header, Content, Footer } = Layout;
+const { Content } = Layout;
 
 const App = () => {
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+  const { token: { colorBgContainer, borderRadiusLG } } = theme.useToken();
+  const contentStyle = {
+    padding: 24,
+    minHeight: 380,
+    background: colorBgContainer,
+    borderRadius: borderRadiusLG,
+  };
   return (
     <Layout>
       <HeaderSection />
-      <Content style={{ padding: "0 48px" }}>
+      <Content style={{ padding: "0 48px", }}>
         <Breadcrumbs />
-        <div
-          style={{
-            padding: 24,
-            minHeight: 490,
-            background: colorBgContainer,
-            borderRadius: borderRadiusLG,
-          }}
-        >
+        <div style={contentStyle}>
           <MainRoutes />
         </div>
       </Content>

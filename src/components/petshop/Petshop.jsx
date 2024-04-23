@@ -4,18 +4,21 @@ import { useQuery } from "@tanstack/react-query";
 import { Col, FloatButton, Row } from "antd";
 import { AxiosInstance } from "../../utils/Axios";
 import ProductCard from "./ProductCard";
+import GlobalLoader from "../../utils/GlobalLoader";
 
 const Petshop = () => {
   const {
     isLoading,
     isError,
+    error,
     data: petshop,
   } = useQuery({
     queryKey: ["petshop"],
     queryFn: () =>
       AxiosInstance.get("/petshop").then((res) => res.data),
   });
-  console.log("🚀 ~ Petshop ~ petshop:", petshop);
+  if (isLoading) return <GlobalLoader />;
+  if (isError) return `An error has occurred: ${error.message}`;
   return (
     <div>
       <FloatButton

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Satisfy&display=swap');
 *{
   padding: 0;
   margin: 0;
@@ -7,6 +10,7 @@ img{
   width: 100%;
   display: block;
 }
+body{ font-family: "Poppins", sans-serif;}
 .demo-logo {
   margin-inline-end: 24px;
   display: flex;
@@ -33,4 +37,52 @@ dt::after {
 dd {
   margin: 0 0 0 110px;
   padding: 0 0 0.5em 0;
+}
+
+
+.section__home {
+  min-height: 400px;
+  /* overflow: hidden; */
+  background-image: url("https://www.transparenttextures.com/patterns/light-wool.png");
+  background-color: #cbcbcb;
+}
+.home__image{
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.home__image img{
+  width: 400px;
+  object-fit: cover;
+}
+.home__details {
+  min-height: 400px;
+ padding: 30px; 
+  display: grid;
+  place-content: center;
+}
+
+.home__title {
+  font-family: 'Satisfy', cursive;
+  color: #23253c;
+  font-size: 45px;
+  font-weight: 700;
+  color: #F86900;
+}
+small {
+  font-size: 15px;
+  text-transform: uppercase;
+  display: flex;
+  font-weight: 500;
+  margin-bottom: 15px;
+  margin-top: 15px;
+}
+.home__desc {
+  font-size: 20px;
+  font-weight: 300;
+  line-height: 25px;
+}
+.ant-table-placeholder{
+  display: none;
 }

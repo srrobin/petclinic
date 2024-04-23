@@ -5,23 +5,24 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import OwnerForm from "./OwnerForm";
 import { createOwner } from "../../utils/Axios";
 
-const AddOwner = ({ modal1Open, setModal1Open }) => {
+const AddOwner = ({ modal1Open, setModal1Open, ownerslength }) => {
   const navigate = useNavigate();
   const quaryclient = useQueryClient();
 
   const { mutate } = useMutation({
     mutationFn: createOwner,
     onSuccess: () => {
-      quaryclient.invalidateQueries({ queryKey: ["petclinic"] });
+      quaryclient.invalidateQueries({ queryKey: ["owner"] });
       navigate("/owners");
       message.success("Owner added successfully");
     }
   });
   const handleSubmit = (values) => {
-    console.log("🚀 ~ handleSubmit ~ values:", values);
-    mutate({
-      ...values,
-    });
+    const newOwner = {
+      id: (ownerslength + 1).toString(),
+      ...values
+    };
+    mutate(newOwner);
     setModal1Open(false);
   };
 

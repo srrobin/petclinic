@@ -22,7 +22,7 @@ const HeaderSection = () => {
       <Menu
         theme="dark"
         mode="horizontal"
-        defaultSelectedKeys={["1"]}
+        defaultSelectedKeys={["2"]}
         items={items}
         style={{
           flex: 1,
