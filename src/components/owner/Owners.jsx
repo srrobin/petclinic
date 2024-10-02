@@ -79,12 +79,12 @@ const Owners = () => {
             headerBg: "#042f75",
           },
           Button: {
-            defaultBg: "#042f75",
-            defaultHoverBg: "#28100b",
-            colorText: "#abaaaa",
-            defaultHoverColor: "#F86900",
-            colorBorder: "#595858",
-            defaultHoverBorderColor: "#F86900",
+            defaultBg: "#ffffff",
+            defaultHoverBg: "#001c4f",
+            colorText: "#000000",
+            defaultHoverColor: "#ffffff",
+            colorBorder: "#000000",
+            defaultHoverBorderColor: "#ffffff",
           },
           Pagination: {
             colorPrimary: "#042f75",
@@ -106,13 +106,13 @@ const Owners = () => {
             }
           >
             <Table
-              // dataSource={owners}
+              scroll={{ x: "max-content" }}
               dataSource={owners}
               columns={columns}
               size="small"
-              scroll={{
-                y: 450,
-              }}
+              // scroll={{
+              //   y: 450,
+              // }}
               rowKey={(record) => record.id}
             />
           </Card>

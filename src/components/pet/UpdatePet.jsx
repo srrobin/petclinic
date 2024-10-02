@@ -49,8 +49,8 @@ const UpdatePet = ({ modalUpdatePet, setModalUpdatePet, petId = null }) => {
     mutate(finalUp);
     setModalUpdatePet(false);
   };
-  if (isLoading) return <GlobalLoader />;
-  if (isError) return `An error has occurred: ${error.message}`;
+  // if (isLoading) return <GlobalLoader />;
+  // if (isError) return `An error has occurred: ${error.message}`;
   return (
     <Modal
       title="Update Pet"

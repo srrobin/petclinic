@@ -10,29 +10,47 @@
       "status": 1
     },
     {
-      "name": "Md. Robin Rahman",
-      "email": "djangoman07@gmail.com",
-      "phone": "01912347237",
-      "address": "135.creacent road ,green road ,dhaka",
-      "city": "dhanmondi",
-      "status": "2",
+      "name": "Sayam Rahman 123",
+      "email": "sayam@gmail.com",
+      "phone": "01711337897",
+      "address": "73/2,dhaka",
+      "city": "dhaka",
+      "status": 2,
       "id": "2"
     },
     {
       "id": "3",
-      "name": "MD Shihab",
-      "status": "3",
+      "name": "Razon Ahmed",
+      "email": "razon@gmail.com",
+      "phone": "01799337897",
+      "address": "71/2,dhaka",
+      "city": "dhaka",
+      "status": 3
+    },
+    {
+      "name": "MD Shihab 123",
       "email": "mdshihab573@gmail.com",
       "phone": "01912347237",
       "address": "73/A,east kazipara ,mirpur",
-      "city": "dhaka"
+      "city": "dhaka",
+      "status": "1",
+      "id": "4"
+    },
+    {
+      "id": "5",
+      "name": "Md. Sayam Rahman Robin",
+      "status": "1",
+      "email": "srrobin07@gmail.com",
+      "phone": "01302700760",
+      "address": "Mymensingh",
+      "city": "Mymensingh"
     }
   ],
   "pets": [
     {
       "id": "105",
       "ownerId": "1",
-      "petname": "New Max new up",
+      "petname": "Buddy.",
       "species": "Dog",
       "birthday": "2019-08-12",
       "visits": [
@@ -49,33 +67,95 @@
       ]
     },
     {
-      "id": "1",
-      "ownerId": "2",
-      "petname": "new pet",
+      "id": "106",
+      "ownerId": "1",
+      "petname": "Lassie",
       "species": "Dog",
       "birthday": "2024-04-01",
-      "visits": []
+      "visits": [
+        {
+          "id": "1001",
+          "date": "2024-04-10",
+          "reason": "General checkup"
+        },
+        {
+          "id": "1002",
+          "date": "2024-02-15",
+          "reason": "Vaccination"
+        }
+      ]
+    },
+    {
+      "id": "107",
+      "ownerId": "2",
+      "petname": "good  pet",
+      "species": "Rabbit",
+      "birthday": "2024-04-03",
+      "visits": [
+        {
+          "id": "1001",
+          "date": "2024-04-10",
+          "reason": "Annual checkup"
+        },
+        {
+          "id": "1002",
+          "date": "2024-02-15",
+          "reason": "Vaccination"
+        }
+      ]
     },
     {
       "id": "2",
       "ownerId": "3",
+      "petname": "Rover.",
+      "species": "Rabbit",
+      "birthday": "2024-04-03",
+      "visits": [
+        {
+          "id": "1001",
+          "date": "2024-04-10",
+          "reason": "Annual look"
+        },
+        {
+          "id": "1002",
+          "date": "2024-02-15",
+          "reason": "Vaccination"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "ownerId": "4",
       "petname": "good  pet",
       "species": "Rabbit",
       "birthday": "2024-04-03",
-      "visits": []
+      "visits": [
+        {
+          "id": "1001",
+          "date": "2024-04-10",
+          "reason": " checkup"
+        },
+        {
+          "id": "1002",
+          "date": "2024-02-15",
+          "reason": "New Vaccination"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "ownerId": "5",
+      "petname": "ketty",
+      "species": "Rabbit",
+      "birthday": "2023-10-05",
+      "visits": [
+        {
+          "id": "1",
+          "date": "2024-10-03",
+          "reason": "good to see ketty"
+        }
+      ]
     }
-  ],
-  "species": [
-    "Dog",
-    "Cat",
-    "Bird",
-    "Rabbit",
-    "Hamster",
-    "Guinea Pig",
-    "Fish",
-    "Snake",
-    "Turtle",
-    "Lizard"
   ],
   "veterinarians": [
     {
@@ -129,6 +209,18 @@
       "specialties": " Zoo Medicine"
     }
   ],
+  "species": [
+    "Dog",
+    "Cat",
+    "Bird",
+    "Rabbit",
+    "Hamster",
+    "Guinea Pig",
+    "Fish",
+    "Snake",
+    "Turtle",
+    "Lizard"
+  ],
   "petshop": [
     {
       "id": "1",
@@ -141,7 +233,9 @@
       "brand": "PetFoods Inc.",
       "category": "Pet Food",
       "thumbnail": "premium_dog_food_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/8334/8334173.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/8334/8334173.png"
+      ]
     },
     {
       "id": "2",
@@ -154,7 +248,9 @@
       "brand": "Whiskers Ltd.",
       "category": "Pet Food",
       "thumbnail": "healthy_cat_food_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/2334/2334544.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/2334/2334544.png"
+      ]
     },
     {
       "id": "3",
@@ -167,7 +263,9 @@
       "brand": "PetWear Co.",
       "category": "Pet Clothing",
       "thumbnail": "cozy_dog_sweater_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/12814/12814991.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/12814/12814991.png"
+      ]
     },
     {
       "id": "4",
@@ -180,7 +278,9 @@
       "brand": "Purrfect Accessories",
       "category": "Pet Clothing",
       "thumbnail": "cat_bow_tie_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/6628/6628328.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/6628/6628328.png"
+      ]
     },
     {
       "id": "5",
@@ -193,7 +293,9 @@
       "brand": "Playful Pets",
       "category": "Pet Toys",
       "thumbnail": "interactive_dog_toy_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/9134/9134573.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/9134/9134573.png"
+      ]
     },
     {
       "id": "6",
@@ -206,7 +308,9 @@
       "brand": "Paws & Claws",
       "category": "Pet Furniture",
       "thumbnail": "scratching_post_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/5607/5607401.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/5607/5607401.png"
+      ]
     },
     {
       "id": "7",
@@ -219,7 +323,9 @@
       "brand": "Aquatic Wonders",
       "category": "Aquarium",
       "thumbnail": "fish_tank_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/8277/8277460.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/8277/8277460.png"
+      ]
     },
     {
       "id": "8",
@@ -232,7 +338,9 @@
       "brand": "Feather Haven",
       "category": "Bird Supplies",
       "thumbnail": "bird_cage_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/6356/6356546.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/6356/6356546.png"
+      ]
     },
     {
       "id": "9",
@@ -245,7 +353,9 @@
       "brand": "Tiny Trails",
       "category": "Small Animal Supplies",
       "thumbnail": "hamster_wheel_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/2295/2295216.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/2295/2295216.png"
+      ]
     },
     {
       "id": "10",
@@ -258,7 +368,9 @@
       "brand": "Cold-Blooded Comforts",
       "category": "Reptile Supplies",
       "thumbnail": "reptile_heat_lamp_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/891/891045.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/891/891045.png"
+      ]
     },
     {
       "id": "11",
@@ -271,7 +383,9 @@
       "brand": "Furry Friends",
       "category": "Small Animal Supplies",
       "thumbnail": "small_animal_cage_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/6179/6179937.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/6179/6179937.png"
+      ]
     },
     {
       "id": "12",
@@ -284,7 +398,9 @@
       "brand": "Aquatic Reptiles",
       "category": "Reptile Supplies",
       "thumbnail": "turtle_dock_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/616/616651.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/616/616651.png"
+      ]
     },
     {
       "id": "13",
@@ -297,7 +413,9 @@
       "brand": "Hoppy Homes",
       "category": "Small Animal Supplies",
       "thumbnail": "rabbit_hutch_thumbnail.jpg",
-      "images": "https://cdn-icons-png.flaticon.com/128/5228/5228465.png"
+      "images": [
+        "https://cdn-icons-png.flaticon.com/128/5228/5228465.png"
+      ]
     }
   ]
 }

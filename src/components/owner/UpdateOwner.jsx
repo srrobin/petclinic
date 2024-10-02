@@ -33,8 +33,8 @@ const UpdateOwner = ({ modal1Open, setModal1Open }) => {
     });
     setModal1Open(false);
   };
-  if (isLoading) return <GlobalLoader />;
-  if (isError) return `An error has occurred: ${error.message}`;
+  // if (isLoading) return <GlobalLoader />;
+  // if (isError) return `An error has occurred: ${error.message}`;
   return (
     <Modal
       title="New Customer"

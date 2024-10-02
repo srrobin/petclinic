@@ -33,7 +33,7 @@ const GlobalLoader = () => {
         className="g_loader"
         indicator={<LoadingOutlined style={{ fontSize: 24 }} />}
       />
-      <p>30s ... </p>
+      {/* <p>30s ... </p> */}
     </>
   );
 };

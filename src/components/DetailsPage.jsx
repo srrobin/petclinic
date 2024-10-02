@@ -55,7 +55,10 @@ const PetClinic = () => {
   }, [owner]);
 
   if (isLoading) return <GlobalLoader />;
-  if (isError) return `An error has occurred: ${error.message}`;
+
+  if (isError) {
+    return <p>Add Owner&rsquo;s Pet.</p>;
+  }
   return (
     <>
       <div>
@@ -68,6 +71,7 @@ const PetClinic = () => {
                 onClick={() => setModal1Open(true)}
                 type="primary"
                 icon={<EditOutlined />}
+                size="small"
               >
                 {" "}
                 Update Owner{" "}
@@ -76,11 +80,16 @@ const PetClinic = () => {
                 onClick={() => setModal2Open(true)}
                 type="primary"
                 icon={<GiDeer />}
+                size="small"
               >
                 Add Pet
               </Button>
               <Link to="/owners">
-                <Button type="primary" icon={<CaretLeftOutlined />}>
+                <Button
+                  type="primary"
+                  size="small"
+                  icon={<CaretLeftOutlined />}
+                >
                   back
                 </Button>
               </Link>
@@ -125,7 +134,7 @@ const PetClinic = () => {
         <Row>
           <Col span={24} style={{ marginTop: "20px" }}>
             <div style={titleStyle}>Pets and Visits</div>
-            {owner &&
+            {owner?.pets?.length > 0 ? (
               owner?.pets?.map((item, index) => (
                 <div
                   key={item.id}
@@ -196,7 +205,10 @@ const PetClinic = () => {
                     </Col>
                   </Row>
                 </div>
-              ))}
+              ))
+            ) : (
+              <p>Owner&rsquo;s pet not found</p>
+            )}
           </Col>
           <UpdateOwner modal1Open={modal1Open} setModal1Open={setModal1Open} />
           <AddPet

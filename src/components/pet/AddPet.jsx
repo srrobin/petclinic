@@ -35,8 +35,8 @@ const AddPet = ({ modal2Open, setModal2Open, owner }) => {
     mutate(updatePetData);
     setModal2Open(false);
   };
-  if (isLoading) return <GlobalLoader />;
-  if (isError) return `An error has occurred: ${error.message}`;
+  // if (isLoading) return <GlobalLoader />;
+  // if (isError) return `An error has occurred: ${error.message}`;
   return (
     <Modal
       title="Add Pet"
