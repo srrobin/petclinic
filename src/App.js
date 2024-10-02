@@ -26,7 +26,7 @@ const App = () => {
     >
       <Layout>
         <HeaderSection />
-        <Content style={{ padding: "0 48px", }}>
+        <Content className="content__area">
           <Breadcrumbs />
           <div style={contentStyle}>
             <MainRoutes />

@@ -1,22 +1,3 @@
-// import { Breadcrumb } from "antd";
-// import React from "react";
-
-// const Breadcrumbs = () => {
-//   return (
-//     <Breadcrumb
-//       style={{
-//         margin: "16px 0",
-//       }}
-//     >
-//       <Breadcrumb.Item>Home</Breadcrumb.Item>
-//       <Breadcrumb.Item>List</Breadcrumb.Item>
-//       <Breadcrumb.Item>App</Breadcrumb.Item>
-//     </Breadcrumb>
-//   );
-// };
-
-// export default Breadcrumbs;
-
 import { Breadcrumb, Tag } from "antd";
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
@@ -41,7 +22,7 @@ const Breadcrumbs = () => {
     });
 
   return (
-    <Breadcrumb style={{ margin: "16px 0" }}>
+    <Breadcrumb className="breadcrumb__area">
       {crumbs}
     </Breadcrumb>
   );

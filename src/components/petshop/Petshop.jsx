@@ -31,7 +31,7 @@ const Petshop = () => {
       />
       <Row gutter={[24, 24]}>
         {petshop?.map((product) => (
-          <Col span={12} md={8} lg={4} xxl={4} key={product.id}>
+          <Col xs={24} sm={12} md={8} lg={4} key={product.id}>
             <ProductCard product={product} />
           </Col>
         ))}

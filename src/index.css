@@ -86,3 +86,19 @@ small {
 .ant-table-placeholder{
   display: none;
 }
+.content__area{
+  padding:0 48px
+}
+.breadcrumb__area{
+   margin: 16px 0;
+   padding:0px
+}
+@media screen and (max-width: 576px) {
+  .content__area{
+    padding: 0px
+  }
+  .breadcrumb__area{
+    margin: 16px 0;
+    padding-left:24px;
+ }
+}
