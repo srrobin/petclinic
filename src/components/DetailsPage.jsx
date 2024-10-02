@@ -185,6 +185,7 @@ const PetClinic = () => {
                               setPetId(item.id);
                             }}
                             type="primary"
+                            size="small"
                             icon={<EditOutlined />}
                           >
                             update pet
@@ -196,6 +197,7 @@ const PetClinic = () => {
                               setPetinfo(item);
                             }}
                             type="primary"
+                            size="small"
                             icon={<FaUserDoctor />}
                           >
                             Add Visit
