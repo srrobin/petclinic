@@ -9,7 +9,7 @@ const ProductCard = ({ product }) => (
     cover={
       <img
         alt="example"
-        src={product.images[0]}
+        src={product.images}
         style={{ width: "90px", height: "90px", objectFit: "cover" }}
       />}
     variant="top"
