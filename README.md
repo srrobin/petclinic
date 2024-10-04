@@ -1,4 +1,4 @@
-## PetClinic 🐾
+# PetClinic 🐾
 A full-stack Pet Clinic management application built with React.js, TanStack Query, Ant Design, and JSON Server. "PetClinic" allows users to manage pet records, doctor consultations, and shop for pet supplies online. The project simulates a robust, real-world application hosted on Glitch. me for easy JSON server data management and retrieval.
 
 ![POS System](https://github.com/srrobin/petclinic/blob/main/src/assets/p1.png)
